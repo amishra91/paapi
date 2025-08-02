@@ -18,6 +18,13 @@
 - Charts support view switching (Daily / Weekly / Monthly)
 - Progress donut and activity charts update on dropdown selection
 
+## Tech Stack
+
+- **NextJS** – App Router, TypeScript
+- **Tailwind CSS** – Utility-first styling
+- **Recharts** – Chart library for all visualizations
+- **Responsive Design** – Optimized for mobile, tablet, and desktop
+
 ## Installation & running the app
 
 ```
