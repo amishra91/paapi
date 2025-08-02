@@ -1,103 +1,63 @@
-import Image from "next/image";
+import BarCaloriesChart from '@/components/charts/BarChart';
+import LineStepsChart from '@/components/charts/LineChart';
+import PieMacroChart from '@/components/charts/PieChart';
+import Header from '@/components/Header';
+import { Check, Footprints, GlassWater, HeartPulse, Zap } from 'lucide-react';
+import ActivityChart from '../components/charts/ActivityChart';
+import AreaHeartRateChart from '../components/charts/AreaChart';
+import DonutHydrationChart from '../components/charts/DonutChart';
+import HeatMapChart from '../components/charts/HeatMapChart';
+import RadarSkillsChart from '../components/charts/RadarChart';
+import RunDataChart from '../components/charts/RunDataChart';
+import ScatterWeightSleepChart from '../components/charts/ScatterChart';
+import StackedWorkoutChart from '../components/charts/StackedBarChart';
+import ProfilePanel from '../components/ProfilePanel';
+import ProgressTile from '../components/ProgressTile';
+import Sidebar from '../components/Sidebar';
+import StatTile from '../components/StatTile';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex">
+      <Sidebar />
+      <main className="flex flex-1">
+        <div className="flex flex-col flex-1">
+          <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <StatTile
+              icon={<Footprints />}
+              label="Steps"
+              value="10,550"
+              bgColor="#1AB0B0"
+              goalMetIcon={<Check />}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <StatTile icon={<GlassWater />} label="Water" value="1.25 Liters" bgColor="#18a4ed" />
+            <StatTile icon={<Zap />} label="Calories" value="4,720 kcal" bgColor="#FA5A7D" />
+            <StatTile icon={<HeartPulse />} label="Heart Rate" value="110 bpm" bgColor="#8676FE" />
+          </div>
+          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ActivityChart />
+            <ProgressTile />
+          </div>
+          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <LineStepsChart />
+            <BarCaloriesChart />
+            <PieMacroChart />
+            <AreaHeartRateChart />
+            <RadarSkillsChart />
+            <ScatterWeightSleepChart />
+            <StackedWorkoutChart />
+            <DonutHydrationChart />
+            <HeatMapChart />
+            <RunDataChart />
+          </div>
+        </div>
+
+        <div className="hidden lg:block">
+          <ProfilePanel />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
