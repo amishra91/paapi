@@ -12,6 +12,12 @@ export const activityData: Record<ViewType, ActivityDataItem[]> = {
     { day: '3 PM', value: 12 },
     { day: '6 PM', value: 18 },
     { day: '9 PM', value: 10 },
+    { day: '6 AM', value: 5 },
+    { day: '9 AM', value: 10 },
+    { day: '12 PM', value: 8 },
+    { day: '3 PM', value: 12 },
+    { day: '6 PM', value: 18 },
+    { day: '9 PM', value: 10 },
   ],
   Weekly: [
     { day: 'Mon', value: 12 },
